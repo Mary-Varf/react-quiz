@@ -2,28 +2,33 @@ import { useState, useEffect } from "react";
 import cls from "./HomePage.module.css";
 import { API_URL } from "../../constants";
 import { QuestionCardList } from "../../components/QuestionCardList";
+import { Loader } from "../../components/Loader";
+import { useFetch } from "../../hooks/useFetch";
 
 export const HomePage = () => {
   const [questions, setQuestions] = useState([]);
-
-  const getQuestions = async () => {
-    try {
-      const response = await fetch(`${API_URL}/react`);
-      const questions = await response.json();
-      setQuestions(questions);
-    } catch (e) {
-      console.log(e);
+  const [getQuestions, isLoading, error] = useFetch(async (url) => {
+    const response = await fetch(`${API_URL}/${url}`);
+    if (!response.ok) {
+      throw new Error(`Ошибка запроса: ${response.status}`);
     }
-  };
+    const questions = await response.json();
+    setQuestions(questions);
+    return questions;
+  });
 
   useEffect(() => {
-    getQuestions();
+    getQuestions("react");
   }, []);
 
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
   return (
     <>
+      {isLoading && <Loader />}
+      {error && <p>{error}</p>}
       <QuestionCardList cards={questions} />
-      <button onClick={getQuestions}>Get Questions</button>
     </>
   );
 };
