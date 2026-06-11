@@ -13,10 +13,8 @@ export const useFetch = (callback) => {
       await delayFn();
 
       const response = await callback(arg);
-
       return response;
     } catch (e) {
-      console.log(e);
       setError(e.message);
       toast.error(e.message);
     } finally {
