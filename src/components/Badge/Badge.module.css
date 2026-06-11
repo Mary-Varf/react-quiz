@@ -20,3 +20,9 @@
 .alert {
   background-color: #d84040;
 }
+
+@media (prefers-color-scheme: light) {
+  .badge {
+    color: var(--btn-text-color);
+  }
+}

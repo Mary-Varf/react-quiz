@@ -43,3 +43,49 @@
   justify-content: center;
   align-items: center;
 }
+
+.smallLoader {
+  position: relative;
+  width: 25px;
+  height: 4px;
+}
+.smallLoader:before,
+.smallLoader:after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-color);
+  box-shadow: 8px 0 #fff;
+  left: 0;
+  top: 0;
+  animation: ballMoveX 1s linear infinite;
+}
+.smallLoader:after {
+  box-shadow: none;
+  transform-origin: 10px 0;
+  transform: rotate(-153deg);
+  animation: rotateLoader 1s linear infinite;
+}
+
+@keyframes rotateLoader {
+  0%,
+  10% {
+    transform: rotate(-153deg);
+  }
+  90%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes ballMoveX {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(8px);
+  }
+}

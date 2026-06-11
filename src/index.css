@@ -21,18 +21,18 @@
   :root {
     --main-bg-color: #fff;
     --text-color: #23272f;
-    --btn-text-color: #57c4dc;
-    --btn-bg-color: #16444f;
     --card-bg-color: #ebedf0;
+    --btn-text-color: #fff;
+    --btn-bg-color: #383b3f;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #fff;
     --main-bg-color: #23272f;
-    --btn-text-color: #383b3f;
-    --btn-bg-color: #fff;
     --card-bg-color: #343a46;
+    --btn-text-color: #57c4dc;
+    --btn-bg-color: #16444f;
   }
 }
 * {

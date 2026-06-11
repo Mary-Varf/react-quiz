@@ -42,7 +42,6 @@ export const HomePage = () => {
     }
     const cards = await response.json();
     setQuestions(cards);
-    console.log(cards);
     return cards;
   });
 
