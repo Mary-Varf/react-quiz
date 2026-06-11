@@ -1,6 +1,7 @@
 import {} from "react";
 import cls from "./QuestionCardList.module.css";
 import { QuestionCard } from "../QuestionCard/QuestionCard";
+import { Loader } from "../Loader";
 
 export const QuestionCardList = ({ cards }) => {
   return (
@@ -8,6 +9,7 @@ export const QuestionCardList = ({ cards }) => {
       {cards.map((card, index) => {
         return <QuestionCard key={index} card={card} />;
       })}
+      <Loader />
     </div>
   );
 };
