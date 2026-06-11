@@ -1,23 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import "./App.css";
-import { Button } from "./components/Button/Button";
-import { Counter } from "./components/Counter/Counter";
-import { List } from "./List";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MainLayout } from "./components/MainLayout";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <>
-      <section id="center">
-        <Counter />
-        <List />
-      </section>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<div>home</div>} />
+          <Route path="/main" element={<div>main</div>} />
+          <Route path="/addquestion" element={<div>addquestion</div>} />
+          <Route path="/forbidden" element={<div>forbidden</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
