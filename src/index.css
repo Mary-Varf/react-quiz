@@ -4,6 +4,7 @@
   --main-bg-color: #23272f;
   --btn-text-color: #383b3f;
   --btn-bg-color: #fff;
+  --card-bg-color: #343a46;
   font-family: var(--sans);
   line-height: 1.5;
   font-weight: 400;
@@ -22,6 +23,7 @@
     --text-color: #23272f;
     --btn-text-color: #16444f;
     --btn-bg-color: #57c4dc;
+    --card-bg-color: #ebedf0;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -30,6 +32,7 @@
     --main-bg-color: #23272f;
     --btn-text-color: #383b3f;
     --btn-bg-color: #fff;
+    --card-bg-color: #343a46;
   }
 }
 * {
