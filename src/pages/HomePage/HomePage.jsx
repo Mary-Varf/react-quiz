@@ -6,14 +6,31 @@ import { Loader } from "../../components/Loader";
 import { useFetch } from "../../hooks/useFetch";
 import { SearchInput } from "../../components/SearchInput";
 import { Button } from "../../components/Button";
+import { Select } from "../../components/Select";
 
-const DEFAULT_PER_PAGE = 10;
+const DEFAULT_PER_PAGE = 20;
+
+const PAGE_OPTIONS = [
+  { value: 10, text: 10 },
+  { value: 20, text: 20 },
+  { value: 30, text: 30 },
+  { value: 50, text: 50 },
+  { value: 100, text: 100 },
+];
+
+const SORT_OPTIONS = [
+  { value: "level", text: "level ASC" },
+  { value: "-level", text: "level DESC" },
+  { value: "completed", text: "completed ASC" },
+  { value: "-completed", text: "completed DESC" },
+];
 
 export const HomePage = () => {
   const controlsContainerRef = useRef();
   const [questions, setQuestions] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [sortSelectValue, setSortSelectValue] = useState("");
+  const [countSelectValue, setCountSelectValue] = useState("");
   const [searchParams, setSearchParams] = useState(
     `?_page=1&_per_page=${DEFAULT_PER_PAGE}`,
   );
@@ -48,14 +65,21 @@ export const HomePage = () => {
   const onSortSelectChangeHandler = (e) => {
     setSortSelectValue(e.target.value);
     setSearchParams(
-      `?_page=1&_per_page=${DEFAULT_PER_PAGE}&_sort=${e.target.value}`,
+      `?_page=1&_per_page=${countSelectValue}&_sort=${e.target.value}`,
+    );
+  };
+
+  const onCountSelectChangeHandler = (e) => {
+    setCountSelectValue(e.target.value);
+    setSearchParams(
+      `?_page=1&_per_page=${e.target.value}&_sort=${sortSelectValue}`,
     );
   };
 
   const paginationHandler = (e) => {
     if (e.target.tagName === "BUTTON") {
       setSearchParams(
-        `?_page=${e.target.textContent}&_per_page=${DEFAULT_PER_PAGE}&_sort=${e.target.value}`,
+        `?_page=${e.target.textContent}&_per_page=${countSelectValue}&_sort=${e.target.value}`,
       );
       controlsContainerRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -84,19 +108,18 @@ export const HomePage = () => {
     <>
       <div className={cls.controlsContainer} ref={controlsContainerRef}>
         <SearchInput value={searchValue} onChange={onSearchChangeHandler} />
-        <select
-          name=""
-          id=""
+        <Select
+          defaultValue="sort by"
           value={sortSelectValue}
           onChange={onSortSelectChangeHandler}
-          className={cls.select}
-        >
-          <option value="">sort by</option>
-          <option value="level">level ASC</option>
-          <option value="-level">level DESC</option>
-          <option value="completed">completed ASC</option>
-          <option value="-completed">completed DESC</option>
-        </select>
+          options={SORT_OPTIONS}
+        />
+        <Select
+          defaultValue="count"
+          value={countSelectValue}
+          onChange={onCountSelectChangeHandler}
+          options={PAGE_OPTIONS}
+        />
       </div>
 
       {isLoading && <Loader />}
@@ -106,7 +129,7 @@ export const HomePage = () => {
 
       {cards.length === 0 ? (
         <p className={cls.noCards}>No cards...</p>
-      ) : (
+      ) : pagination.length > 1 ? (
         <div className={cls.paginationContainer} onClick={paginationHandler}>
           {pagination.map((el) => {
             return (
@@ -116,6 +139,8 @@ export const HomePage = () => {
             );
           })}
         </div>
+      ) : (
+        ""
       )}
     </>
   );
