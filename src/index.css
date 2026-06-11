@@ -2,7 +2,8 @@
   --text-color: #fff;
   --sans: system-ui, "Avenir", Helvetica, Arial, sans-serif;
   --main-bg-color: #23272f;
-
+  --btn-text-color: #383b3f;
+  --btn-bg-color: #fff;
   font-family: var(--sans);
   line-height: 1.5;
   font-weight: 400;
@@ -19,12 +20,16 @@
   :root {
     --main-bg-color: #fff;
     --text-color: #23272f;
+    --btn-text-color: #16444f;
+    --btn-bg-color: #57c4dc;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #fff;
     --main-bg-color: #23272f;
+    --btn-text-color: #383b3f;
+    --btn-bg-color: #fff;
   }
 }
 * {
