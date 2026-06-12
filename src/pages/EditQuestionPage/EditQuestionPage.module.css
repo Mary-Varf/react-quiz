@@ -10,4 +10,18 @@
   background-color: var(--card-bg-color);
   box-shadow: 0 0 8px 05px rgba(0, 0, 0, 0.1);
   padding: 25px;
+  position: relative;
+}
+.removeBtn {
+  padding: 5px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.removeBtn:disabled {
+  opacity: 0.9;
 }

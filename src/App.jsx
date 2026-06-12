@@ -4,6 +4,7 @@ import { HomePage } from "./pages/HomePage/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { QuestionPage } from "./pages/QuestionPage";
 import { AddQuestionPageLazy } from "./pages/AddQuestionPage";
+import { EditQuestionPage } from "./pages/EditQuestionPage/EditQuestionPage";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/main" element={<div>main</div>} />
           <Route path="/addquestion" element={<AddQuestionPageLazy />} />
           <Route path="/question/:id" element={<QuestionPage />} />
+          <Route path="/editquestion/:id" element={<EditQuestionPage />} />
           <Route path="/forbidden" element={<div>forbidden</div>} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
