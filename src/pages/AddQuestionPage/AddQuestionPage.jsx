@@ -1,7 +1,10 @@
-import {} from "react";
+import { useActionState } from "react";
 import cls from "./AddQuestionPage.module.css";
 import { Select } from "../../components/Select";
 import { Button } from "../../components/Button";
+import { delayFn } from "../../helpers/delayFn";
+import { toast } from "react-toastify";
+import { API_URL } from "../../constants";
 
 const LEVEL_OPTIONS = [
   { value: 1, text: "1 - easiest" },
@@ -9,11 +12,46 @@ const LEVEL_OPTIONS = [
   { value: 3, text: "3 - hardest" },
 ];
 
+const createCardAction = async (_prevState, formData) => {
+  try {
+    await delayFn();
+    const data = Object.fromEntries(formData);
+    const resources = data.resources.trim();
+    const isClearForm = data.clearForm;
+
+    const response = await fetch(`${API_URL}/react`, {
+      method: "POST",
+      body: JSON.stringify({
+        question: data.question,
+        answer: data.answer,
+        description: data.description,
+        resources: resources.length ? resources.split(",") : [],
+        level: +data.level,
+        completed: false,
+        editDate: undefined,
+      }),
+    });
+    if (response.status === 404) {
+      toast.error(response.statusText);
+      throw new Error(response.statusText);
+    }
+    const question = response.json();
+    toast.success("New question is successfully created");
+    return isClearForm ? {} : question;
+  } catch (error) {
+    toast.error(error);
+    return {};
+  }
+};
+
 export const AddQuestionPage = () => {
+  const [formState, formAction, isPending] = useActionState(createCardAction, {
+    clearForm: true,
+  });
   return (
     <>
       <h1 className={cls.formTitle}>Add new question</h1>
-      <form action="" className={cls.formContiner}>
+      <form action={formAction} className={cls.formContiner}>
         <div className={cls.formControl}>
           <label htmlFor="questionField">Question:</label>
           <textarea
@@ -23,7 +61,7 @@ export const AddQuestionPage = () => {
             rows="2"
             required
             placeholder="Please enter question"
-            defaultValue={"default"}
+            defaultValue={formState?.question}
           ></textarea>
         </div>
 
@@ -36,7 +74,7 @@ export const AddQuestionPage = () => {
             rows="2"
             required
             placeholder="Please enter short anser"
-            defaultValue={"default"}
+            defaultValue={formState?.answer}
           ></textarea>
         </div>
 
@@ -49,7 +87,7 @@ export const AddQuestionPage = () => {
             rows="5"
             required
             placeholder="Please enter description"
-            defaultValue={"default"}
+            defaultValue={formState?.description}
           ></textarea>
         </div>
 
@@ -62,18 +100,20 @@ export const AddQuestionPage = () => {
             rows="3"
             required
             placeholder="Please enter resources separated by commas"
-            defaultValue={"default"}
+            defaultValue={formState?.resources}
           ></textarea>
         </div>
 
         <div className={cls.formControl}>
           <label htmlFor="levelField">Level:</label>
-          <Select
-            onChange={() => {}}
-            options={LEVEL_OPTIONS}
-            value={1}
-            defaultValue={"Question level"}
-          />
+          <select name="level" id="levelField">
+            <option disabled>Question level</option>
+            {LEVEL_OPTIONS.map((el) => (
+              <option key={el.value} value={el.value}>
+                {el.text}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className={cls.formControl}>
@@ -82,14 +122,14 @@ export const AddQuestionPage = () => {
               type="checkbox"
               name="clearForm"
               id="clearFormField"
-              defaultValue={true}
-              className={cls.checkbox}
+              defaultChecked={formState?.clearForm && true}
+              className={cls?.checkbox}
             />
             <span>Clear form after submitting?</span>
           </label>
         </div>
 
-        <Button>Add question</Button>
+        <Button isDisabled={isPending}>Add question</Button>
       </form>
     </>
   );
