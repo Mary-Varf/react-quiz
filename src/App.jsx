@@ -3,6 +3,7 @@ import { MainLayout } from "./components/MainLayout";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { QuestionPage } from "./pages/QuestionPage";
+import { AddQuestionPage } from "./pages/AddQuestionPage";
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/main" element={<div>main</div>} />
-          <Route path="/addquestion" element={<div>addquestion</div>} />
+          <Route path="/addquestion" element={<AddQuestionPage />} />
           <Route path="/question/:id" element={<QuestionPage />} />
           <Route path="/forbidden" element={<div>forbidden</div>} />
           <Route path="*" element={<NotFoundPage />} />

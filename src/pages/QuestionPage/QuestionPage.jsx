@@ -29,7 +29,7 @@ export const QuestionPage = () => {
   });
 
   const [updateCard, isCardUpdating] = useFetch(async (isChecked) => {
-    const response = await fetch(`${API_URL}/react/${id}`, {
+    const response = await fetch(`${API_URL}/reacft/${id}`, {
       method: "PATCH",
       body: JSON.stringify({ completed: isChecked }),
     });
