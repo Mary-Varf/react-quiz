@@ -9,6 +9,13 @@
 .toggleWrapper .input {
   overflow: hidden;
   opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 46px;
+  height: 26px;
+  left: 0;
+  z-index: 999;
+  cursor: pointer;
 }
 
 .toggle {

@@ -1,23 +1,34 @@
-import {} from "react";
+import { useLayoutEffect } from "react";
 import cls from "./ThemeToggler.module.css";
 import { useTheme } from "../../hooks/useTheme";
-import { THEME_STORAGE } from "../../constants";
+import { THEME, THEME_STORAGE } from "../../constants";
 
 export const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
 
-  const onChangeHandler = () => {
-    localStorage.setItem(THEME_STORAGE, theme === "light" ? "dark" : "light");
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  useLayoutEffect(() => {
+    const isChecked = theme !== THEME.DARK;
+    localStorage.setItem(THEME_STORAGE, isChecked ? THEME.LIGHT : THEME.DARK);
+  }, []);
+
+  const onChangeHandler = (e) => {
+    const updatedTheme = e.target.checked === false ? THEME.LIGHT : THEME.DARK;
+    localStorage.setItem(THEME_STORAGE, updatedTheme);
+
+    updatedTheme === THEME.LIGHT
+      ? document.body.classList.remove("darkLayout")
+      : document.body.classList.add("darkLayout");
+    setTheme(updatedTheme);
   };
 
   return (
-    <div className={cls.toggleWrapper} onClick={onChangeHandler}>
+    <div className={cls.toggleWrapper}>
       <input
         className={cls.input}
         id="dn"
         type="checkbox"
-        checked={theme === "light"}
+        onChange={onChangeHandler}
+        checked={theme == THEME.DARK}
       />
       <label className={cls.toggle}>
         <span className={cls.toggle__handler}>
