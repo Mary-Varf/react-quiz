@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { dateFormat } from "../../helpers/dataFormat";
 import { useFetch } from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import EditQuestionPage from "./EditQuestionPage";
 
 export const EditQuestion = ({ initialState = {} }) => {
   const navigate = useNavigate();
