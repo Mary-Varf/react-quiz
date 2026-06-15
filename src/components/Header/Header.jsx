@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/isAuth";
 import cls from "./Header.module.css";
 import { AUTH_STORAGE } from "../../constants";
+import { ThemeToggler } from "../../features/ThemeToggler/ThemeToggler";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ export const Header = () => {
         <span>React Quiz</span>
       </p>
       <div className={cls.headerButtons}>
+        <ThemeToggler />
         {isAuth && (
           <Button onClick={() => navigate("/addquestion")}>Add</Button>
         )}

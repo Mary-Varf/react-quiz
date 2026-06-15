@@ -1,0 +1,189 @@
+.toggleWrapper {
+  color-scheme: light only;
+  overflow: hidden;
+  transform: translate3d(0%, -10%, 0);
+  color: white;
+  width: 140px;
+}
+
+.toggleWrapper .input {
+  overflow: hidden;
+  opacity: 0;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 45px;
+  height: 26px;
+  background-color: var(--theme-toggler-blue);
+  border-radius: 42px;
+  transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.toggle__handler {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background-color: var(--theme-toggler-sun);
+  border-radius: 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: rotate(-45deg);
+}
+
+.toggle__handler .crater {
+  position: absolute;
+  background-color: var(--theme-toggler-sun-light);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  border-radius: 100%;
+}
+
+.toggle__handler .crater1 {
+  top: 9px;
+  left: 5px;
+  width: 2px;
+  height: 2px;
+}
+
+.toggle__handler .crater2 {
+  top: 14px;
+  left: 11px;
+  width: 3px;
+  height: 3px;
+}
+
+.toggle__handler .crater3 {
+  top: 5px;
+  left: 13px;
+  width: 4px;
+  height: 4px;
+}
+
+.star {
+  position: absolute;
+  background-color: var(--theme-toggler-white);
+  transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  border-radius: 50%;
+}
+
+.star1 {
+  top: 5px;
+  left: 17px;
+  z-index: 0;
+  width: 15px;
+  height: 2px;
+}
+
+.star2 {
+  top: 9px;
+  left: 14px;
+  z-index: 1;
+  width: 15px;
+  height: 2px;
+}
+
+.star3 {
+  top: 14px;
+  left: 20px;
+  z-index: 0;
+  width: 15px;
+  height: 1px;
+}
+
+.star4,
+.star5,
+.star6 {
+  opacity: 0;
+  transition: all 300ms 0 cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.star4 {
+  top: 8px;
+  left: 5px;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  transform: translate3d(3px, 0, 0);
+}
+
+.star5 {
+  top: 16px;
+  left: 8px;
+  z-index: 0;
+  width: 2px;
+  height: 2px;
+  transform: translate3d(3px, 0, 0);
+}
+
+.star6 {
+  top: 18px;
+  left: 14px;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  transform: translate3d(3px, 0, 0);
+}
+
+.input:checked + .toggle {
+  background-color: var(--theme-toggler-blue-dark);
+}
+
+.input:checked + .toggle:before {
+  color: var(--theme-toggler-white);
+}
+
+.input:checked + .toggle:after {
+  color: var(--theme-toggler-blue-dark);
+}
+
+.input:checked + .toggle .toggle__handler {
+  background-color: var(--theme-toggler-sun-light);
+  transform: translate3d(20px, 0, 0) rotate(0);
+}
+
+.input:checked + .toggle .toggle__handler .crater {
+  opacity: 1;
+}
+
+.input:checked + .toggle .star1 {
+  width: 1px;
+  height: 1px;
+}
+
+.input:checked + .toggle .star2 {
+  width: 2px;
+  height: 2px;
+  transform: translate3d(-5px, 0, 0);
+}
+
+.input:checked + .toggle .star3 {
+  width: 1px;
+  height: 1px;
+  transform: translate3d(-3px, 0, 0);
+}
+
+.input:checked + .toggle .star4,
+.input:checked + .toggle .star5,
+.input:checked + .toggle .star6 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.input:checked + .toggle .star4 {
+  transition: all 300ms 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.input:checked + .toggle .star5 {
+  transition: all 300ms 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.input:checked + .toggle .star6 {
+  transition: all 300ms 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}

@@ -2,10 +2,17 @@
   --text-color: #fff;
   --sans: system-ui, "Avenir", Helvetica, Arial, sans-serif;
   --main-bg-color: #23272f;
-  --btn-text-color: #383b3f;
+  --btn-text-color: hwb(214 22% 76%);
   --btn-bg-color: #fff;
   --card-bg-color: #343a46;
   --green-color: #219679;
+
+  --theme-toggler-blue: #83d8ff;
+  --theme-toggler-sun: #ffcf96;
+  --theme-toggler-sun-light: #e8cda5;
+  --theme-toggler-white: #fff;
+  --theme-toggler-blue-dark: #749dd6;
+
   font-family: var(--sans);
   line-height: 1.5;
   font-weight: 400;
@@ -18,6 +25,21 @@
     font-size: 16px;
   }
 }
+
+.darkLayout {
+  --text-color: #fff;
+  --main-bg-color: #23272f;
+  --card-bg-color: #343a46;
+  --btn-text-color: #57c4dc;
+  --btn-bg-color: #16444f;
+
+  --theme-toggler-blue: #83d8ff;
+  --theme-toggler-sun: #ffcf96;
+  --theme-toggler-sun-light: #faffcc;
+  --theme-toggler-white: #fff;
+  --theme-toggler-blue-dark: #749dd6;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --main-bg-color: #fff;
@@ -25,6 +47,12 @@
     --card-bg-color: #ebedf0;
     --btn-text-color: #fff;
     --btn-bg-color: #383b3f;
+
+    --theme-toggler-blue: #83d8ff;
+    --theme-toggler-sun: #ffcf96;
+    --theme-toggler-sun-light: #e8cda5;
+    --theme-toggler-white: #fff;
+    --theme-toggler-blue-dark: #749dd6;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -34,6 +62,12 @@
     --card-bg-color: #343a46;
     --btn-text-color: #57c4dc;
     --btn-bg-color: #16444f;
+
+    --theme-toggler-blue: #83d8ff;
+    --theme-toggler-sun: #ffcf96;
+    --theme-toggler-sun-light: #faffcc;
+    --theme-toggler-white: #fff;
+    --theme-toggler-blue-dark: #749dd6;
   }
 }
 * {
