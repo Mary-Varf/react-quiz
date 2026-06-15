@@ -2,377 +2,310 @@
   "react": [
     {
       "id": "1",
-      "question": "Что такое React?",
-      "answer": "React — это библиотека для создания пользовательских интерфейсов.",
-      "description": "React — это JavaScript-библиотека, разработанная Facebook, которая используется для построения UI с компонентным подходом. React позволяет вам создавать пользовательские интерфейсы из отдельных частей, называемых компонентами.",
-      "resources": [
-        "https://react.dev",
-        "https://react.dev/reference/react"
-      ],
+      "question": "What is React?",
+      "answer": "React is a library for building user interfaces.",
+      "description": "React is a JavaScript library developed by Facebook that is used to build user interfaces using a component-based approach. React allows you to create user interfaces from individual pieces called components.",
+      "resources": ["https://react.dev", "https://react.dev/reference/react"],
       "level": 1,
       "completed": true,
       "editDate": "03.02.2025, 19:49"
     },
     {
       "id": "2",
-      "question": "Что такое JSX?",
-      "answer": "JSX — это синтаксическое расширение JavaScript для React.",
-      "description": "JSX позволяет писать HTML-подобный код в JavaScript, который затем транспилируется в вызовы `React.createElement`. Он облегчает создание и визуальное представление структуры компонентов.",
-      "resources": [
-        "https://react.dev/learn/writing-markup-with-jsx"
-      ],
+      "question": "What is JSX?",
+      "answer": "JSX is a syntax extension for JavaScript used with React.",
+      "description": "JSX allows you to write HTML-like code in JavaScript, which is then transpiled into `React.createElement` calls. It makes creating and visualizing component structures easier.",
+      "resources": ["https://react.dev/learn/writing-markup-with-jsx"],
       "level": 1,
       "completed": false,
       "editDate": "12.06.2026, 12:19"
     },
     {
       "id": "3",
-      "question": "Какой основной принцип работы React?",
-      "answer": "React использует Virtual DOM для оптимизации рендеринга.",
-      "description": "React поддерживает концепцию Virtual DOM — это представление реального DOM в памяти. Когда состояние компонента изменяется, React сравнивает Virtual DOM с предыдущим состоянием и обновляет только измененные элементы на странице.",
-      "resources": [
-        "https://react.dev/learn/render-and-commit"
-      ],
+      "question": "What is the main principle behind React?",
+      "answer": "React uses the Virtual DOM to optimize rendering.",
+      "description": "React uses the concept of the Virtual DOM, which is an in-memory representation of the real DOM. When a component's state changes, React compares the new Virtual DOM with the previous one and updates only the changed elements in the real DOM.",
+      "resources": ["https://react.dev/learn/render-and-commit"],
       "level": 2,
       "completed": false,
       "editDate": "03.02.2025, 19:01"
     },
     {
       "id": "4",
-      "question": "Как создать компонент в React?🍩",
-      "answer": "Компонент можно создать как функцию или класс.",
-      "description": "Функциональные компоненты — это функции, принимающие `props` и возвращающие JSX. Классовые компоненты — это классы, наследуемые от `React.Component`, с методом `render`.",
-      "resources": [
-        "https://react.dev/learn/your-first-component"
-      ],
+      "question": "How do you create a component in React?🍩",
+      "answer": "A component can be created as a function or a class.",
+      "description": "Functional components are functions that accept `props` and return JSX. Class components are classes that extend `React.Component` and implement a `render` method.",
+      "resources": ["https://react.dev/learn/your-first-component"],
       "level": 1,
       "completed": false,
       "editDate": "21.02.2025, 20:26"
     },
     {
       "id": "5",
-      "question": "Что такое props в React?",
-      "answer": "Props — это входные параметры компонентов.",
-      "description": "Props (свойства) используются для передачи данных от родительского компонента к дочернему. Они неизменяемы внутри компонента и позволяют делать компоненты более гибкими и переиспользуемыми.",
-      "resources": [
-        "https://react.dev/learn/passing-props-to-a-component"
-      ],
+      "question": "What are props in React?",
+      "answer": "Props are input parameters for components.",
+      "description": "Props are used to pass data from a parent component to a child component. They are immutable within the receiving component and make components more flexible and reusable.",
+      "resources": ["https://react.dev/learn/passing-props-to-a-component"],
       "level": 1,
       "completed": false
     },
     {
       "id": "6",
-      "question": "Что такое состояние (state) в React?",
-      "answer": "State — это внутренние данные компонента, которые могут изменяться.",
-      "description": "Состояние управляется внутри компонента и изменяется через `setState` в классовых компонентах или `useState` в функциональных. Изменение состояния инициирует повторный рендер компонента.",
-      "resources": [
-        "https://react.dev/learn/state-a-components-memory"
-      ],
+      "question": "What is state in React?",
+      "answer": "State is internal component data that can change over time.",
+      "description": "State is managed within a component and is updated using `setState` in class components or `useState` in functional components. Updating state triggers a re-render of the component.",
+      "resources": ["https://react.dev/learn/state-a-components-memory"],
       "level": 2,
       "completed": true
     },
     {
       "id": "7",
-      "question": "Как работает useState в React?",
-      "answer": "useState — это хук для управления состоянием в функциональных компонентах.",
-      "description": "`useState` возвращает массив из двух элементов: текущего значения состояния и функции для его обновления. Используется для хранения и изменения данных в компонентах.",
-      "resources": [
-        "https://react.dev/reference/react/useState"
-      ],
+      "question": "How does useState work in React?",
+      "answer": "useState is a hook for managing state in functional components.",
+      "description": "`useState` returns an array with two elements: the current state value and a function for updating it. It is used to store and modify data within components.",
+      "resources": ["https://react.dev/reference/react/useState"],
       "level": 2,
       "completed": true
     },
     {
       "id": "8",
-      "question": "Что такое useEffect?",
-      "answer": "useEffect — это хук для управления побочными эффектами.",
-      "description": "Хук `useEffect` позволяет выполнять побочные эффекты, такие как запросы к API, подписки и манипуляции с DOM. Он вызывается после рендеринга и может зависеть от определенных значений.",
-      "resources": [
-        "https://react.dev/reference/react/useEffect"
-      ],
+      "question": "What is useEffect?",
+      "answer": "useEffect is a hook for managing side effects.",
+      "description": "The `useEffect` hook allows you to perform side effects such as API requests, subscriptions, and DOM manipulations. It runs after rendering and can depend on specific values.",
+      "resources": ["https://react.dev/reference/react/useEffect"],
       "level": 2,
       "completed": true
     },
     {
       "id": "9",
-      "question": "Что такое React Router?",
-      "answer": "React Router — это библиотека для маршрутизации в React.",
-      "description": "React Router позволяет организовать навигацию в приложении, предоставляя такие компоненты, как `BrowserRouter`, `Routes`, `Route` и `Link`. Он поддерживает динамические маршруты и вложенные структуры.",
-      "resources": [
-        "https://reactrouter.com/en/main"
-      ],
+      "question": "What is React Router?",
+      "answer": "React Router is a routing library for React.",
+      "description": "React Router enables navigation within an application by providing components such as `BrowserRouter`, `Routes`, `Route`, and `Link`. It supports dynamic routes and nested route structures.",
+      "resources": ["https://reactrouter.com/en/main"],
       "level": 2,
       "completed": false
     },
     {
       "id": "10",
-      "question": "Как оптимизировать производительность React-приложения?",
-      "answer": "Используйте React.memo, useMemo, useCallback и оптимизацию рендеринга.",
-      "description": "Для повышения производительности можно использовать `React.memo` для мемоизации компонентов, `useMemo` и `useCallback` для предотвращения ненужных пересозданий функций и данных, а также Code Splitting и Lazy Loading.",
-      "resources": [
-        "https://react.dev/learn/keeping-components-pure"
-      ],
+      "question": "How can you optimize the performance of a React application?",
+      "answer": "Use React.memo, useMemo, useCallback, and rendering optimizations.",
+      "description": "To improve performance, you can use `React.memo` to memoize components, `useMemo` and `useCallback` to avoid unnecessary recreations of values and functions, as well as techniques such as Code Splitting and Lazy Loading.",
+      "resources": ["https://react.dev/learn/keeping-components-pure"],
       "level": 3,
       "completed": true
     },
     {
       "id": "11",
-      "question": "Что такое Virtual DOM в React?",
-      "answer": "Virtual DOM — это представление реального DOM в памяти.",
-      "description": "Virtual DOM — это концепция, используемая React для оптимизации обновлений пользовательского интерфейса. React сравнивает старый и новый Virtual DOM и изменяет только измененные элементы в реальном DOM.",
-      "resources": [
-        "https://react.dev/learn/render-and-commit"
-      ],
+      "question": "What is the Virtual DOM in React?",
+      "answer": "The Virtual DOM is an in-memory representation of the real DOM.",
+      "description": "The Virtual DOM is a concept used by React to optimize user interface updates. React compares the previous and current Virtual DOM trees and updates only the changed elements in the real DOM.",
+      "resources": ["https://react.dev/learn/render-and-commit"],
       "level": 2,
       "completed": false
     },
     {
       "id": "12",
-      "question": "Как работает React.memo?",
-      "answer": "React.memo — это HOC для мемоизации функциональных компонентов.",
-      "description": "React.memo предотвращает повторный рендер компонента, если его пропсы не изменились. Это помогает оптимизировать производительность, избегая ненужных ререндеров.",
-      "resources": [
-        "https://react.dev/reference/react/memo"
-      ],
+      "question": "How does React.memo work?",
+      "answer": "React.memo is a higher-order component (HOC) used to memoize functional components.",
+      "description": "React.memo prevents a component from re-rendering if its props have not changed. This helps optimize performance by avoiding unnecessary re-renders.",
+      "resources": ["https://react.dev/reference/react/memo"],
       "level": 3,
       "completed": false
     },
     {
       "id": "13",
-      "question": "Что делает useCallback?",
-      "answer": "useCallback мемоизирует функцию и возвращает её неизменной между рендерами.",
-      "description": "useCallback используется для оптимизации производительности, предотвращая пересоздание функций при каждом рендере, если их зависимости не изменились.",
-      "resources": [
-        "https://react.dev/reference/react/useCallback"
-      ],
+      "question": "What does useCallback do?",
+      "answer": "useCallback memoizes a function and returns the same function instance between renders.",
+      "description": "useCallback is used to optimize performance by preventing functions from being recreated on every render when their dependencies have not changed.",
+      "resources": ["https://react.dev/reference/react/useCallback"],
       "level": 3,
       "completed": false
     },
     {
       "id": "14",
-      "question": "Что делает useMemo?",
-      "answer": "useMemo мемоизирует вычисляемое значение.",
-      "description": "useMemo кэширует результат вычислений между рендерами, если зависимости не изменились. Это полезно для оптимизации сложных вычислений.",
-      "resources": [
-        "https://react.dev/reference/react/useMemo"
-      ],
+      "question": "What does useMemo do?",
+      "answer": "useMemo memoizes a computed value.",
+      "description": "useMemo caches the result of a computation between renders as long as its dependencies remain unchanged. This is useful for optimizing expensive calculations.",
+      "resources": ["https://react.dev/reference/react/useMemo"],
       "level": 3,
       "completed": false
     },
     {
       "id": "15",
-      "question": "Как работает обработка событий в React?",
-      "answer": "React использует систему синтетических событий.",
-      "description": "События в React работают через обёртку `SyntheticEvent`, которая обеспечивает кросс-браузерную совместимость и оптимизированную обработку.",
-      "resources": [
-        "https://react.dev/learn/responding-to-events"
-      ],
+      "question": "How does event handling work in React?",
+      "answer": "React uses a synthetic event system.",
+      "description": "Events in React are handled through the `SyntheticEvent` wrapper, which provides cross-browser compatibility and optimized event handling.",
+      "resources": ["https://react.dev/learn/responding-to-events"],
       "level": 2,
       "completed": true
     },
     {
       "id": "16",
-      "question": "Что такое порталы (Portals) в React?",
-      "answer": "Порталы позволяют рендерить дочерние элементы вне родительского DOM-узла.",
-      "description": "С помощью `ReactDOM.createPortal` можно рендерить элементы в другой DOM-контейнер, сохраняя связь с родительским компонентом.",
-      "resources": [
-        "https://react.dev/reference/react-dom/createPortal"
-      ],
+      "question": "What are Portals in React?",
+      "answer": "Portals allow rendering child elements outside of their parent DOM node.",
+      "description": "Using `ReactDOM.createPortal`, you can render elements into a different DOM container while preserving their relationship with the parent React component.",
+      "resources": ["https://react.dev/reference/react-dom/createPortal"],
       "level": 3,
       "completed": false
     },
     {
       "id": "17",
-      "question": "Как реализовать ленивую загрузку компонентов?",
-      "answer": "Используйте React.lazy и Suspense.",
-      "description": "React.lazy позволяет загружать компоненты динамически, а Suspense используется для отображения заглушки во время загрузки.",
-      "resources": [
-        "https://react.dev/reference/react/lazy"
-      ],
+      "question": "How do you implement lazy loading of components?",
+      "answer": "Use React.lazy and Suspense.",
+      "description": "React.lazy allows components to be loaded dynamically, while Suspense is used to display a fallback UI during loading.",
+      "resources": ["https://react.dev/reference/react/lazy"],
       "level": 2,
       "completed": false
     },
     {
       "id": "18",
-      "question": "Что такое Context API?",
-      "answer": "Context API — это механизм для передачи данных без проброса пропсов.",
-      "description": "Context API используется для управления глобальным состоянием приложения, например темой или языком интерфейса.",
-      "resources": [
-        "https://react.dev/reference/react/createContext"
-      ],
+      "question": "What is the Context API?",
+      "answer": "The Context API is a mechanism for passing data without prop drilling.",
+      "description": "The Context API is used to manage application-wide state, such as themes, authentication data, or language settings.",
+      "resources": ["https://react.dev/reference/react/createContext"],
       "level": 2,
       "completed": false
     },
     {
       "id": "19",
-      "question": "Как использовать useContext?",
-      "answer": "useContext позволяет получать значения из контекста.",
-      "description": "useContext принимает объект контекста и возвращает его текущее значение, позволяя получать данные без вложенных Consumer-компонентов.",
-      "resources": [
-        "https://react.dev/reference/react/useContext"
-      ],
+      "question": "How do you use useContext?",
+      "answer": "useContext allows you to access values from a context.",
+      "description": "useContext accepts a context object and returns its current value, allowing components to consume context data without nested Consumer components.",
+      "resources": ["https://react.dev/reference/react/useContext"],
       "level": 2,
       "completed": false
     },
     {
       "id": "20",
-      "question": "Что такое рендер-пропсы?",
-      "answer": "Render props — это паттерн для передачи функций в качестве пропсов.",
-      "description": "Этот паттерн позволяет передавать JSX-функцию как пропс в компонент, чтобы гибко управлять рендерингом дочерних компонентов.",
-      "resources": [
-        "https://react.dev/learn/render-props"
-      ],
+      "question": "What are render props?",
+      "answer": "Render props are a pattern for passing functions as props.",
+      "description": "This pattern allows a component to receive a function that returns JSX as a prop, enabling flexible control over the rendering of child components.",
+      "resources": ["https://react.dev/learn/render-props"],
       "level": 3,
       "completed": false
     },
     {
       "id": "21",
-      "question": "Как можно обновить состояние в классовом компоненте?",
-      "answer": "С помощью метода setState.",
-      "description": "setState принимает новый объект состояния и обновляет компонент, вызывая повторный рендер. Можно передавать функцию для обновления на основе предыдущего состояния.",
-      "resources": [
-        "https://react.dev/reference/react/Component#setstate"
-      ],
+      "question": "How can you update state in a class component?",
+      "answer": "Using the setState method.",
+      "description": "setState accepts a new state object and updates the component, triggering a re-render. You can also pass a function to update state based on the previous state.",
+      "resources": ["https://react.dev/reference/react/Component#setstate"],
       "level": 1,
       "completed": false
     },
     {
       "id": "22",
-      "question": "Как работать с формами в React?",
-      "answer": "Используйте управляемые и неуправляемые компоненты.",
-      "description": "В управляемых компонентах состояние формы хранится в state, а в неуправляемых — в DOM. Для работы с формами применяют useState, onChange и ref.",
-      "resources": [
-        "https://react.dev/learn/sharing-state-between-components"
-      ],
+      "question": "How do you work with forms in React?",
+      "answer": "Use controlled and uncontrolled components.",
+      "description": "In controlled components, form state is stored in React state, while in uncontrolled components it is stored in the DOM. Common tools for working with forms include useState, onChange, and refs.",
+      "resources": ["https://react.dev/learn/sharing-state-between-components"],
       "level": 2,
       "completed": false
     },
     {
       "id": "23",
-      "question": "Как передавать ref в дочерний компонент?",
-      "answer": "Используйте forwardRef.",
-      "description": "React.forwardRef позволяет передавать ref внутрь дочернего компонента, чтобы получить доступ к его DOM-элементу или экземпляру.",
-      "resources": [
-        "https://react.dev/reference/react/forwardRef"
-      ],
+      "question": "How do you pass a ref to a child component?",
+      "answer": "Use forwardRef.",
+      "description": "React.forwardRef allows you to pass a ref into a child component to access its DOM element or component instance.",
+      "resources": ["https://react.dev/reference/react/forwardRef"],
       "level": 3,
       "completed": false
     },
     {
       "id": "24",
-      "question": "Как использовать ключи (keys) в списках?",
-      "answer": "Ключи помогают React отличать элементы при рендере.",
-      "description": "Ключи (`key`) используются в списках для идентификации элементов. Они помогают React эффективно обновлять список, избегая ненужных ререндеров.",
-      "resources": [
-        "https://react.dev/learn/rendering-lists"
-      ],
+      "question": "How do you use keys in lists?",
+      "answer": "Keys help React identify elements during rendering.",
+      "description": "Keys (`key`) are used in lists to uniquely identify elements. They help React efficiently update lists and avoid unnecessary re-renders.",
+      "resources": ["https://react.dev/learn/rendering-lists"],
       "level": 1,
       "completed": false
     },
     {
       "id": "25",
-      "question": "Что делает Strict Mode?",
-      "answer": "StrictMode помогает находить потенциальные проблемы в коде.",
-      "description": "StrictMode активирует дополнительные проверки, предупреждая о небезопасных методах жизненного цикла и других ошибках.",
-      "resources": [
-        "https://react.dev/reference/react/StrictMode"
-      ],
+      "question": "What does Strict Mode do?",
+      "answer": "StrictMode helps identify potential problems in your code.",
+      "description": "StrictMode enables additional checks and warnings, helping developers detect unsafe lifecycle methods, unexpected side effects, and other potential issues.",
+      "resources": ["https://react.dev/reference/react/StrictMode"],
       "level": 2,
       "completed": false
     },
     {
       "id": "26",
-      "question": "Как работает useReducer?",
-      "answer": "useReducer управляет состоянием через редьюсер-функцию.",
-      "description": "useReducer полезен для сложных состояний. Он принимает редьюсер-функцию и начальное состояние, возвращая текущий state и dispatch-функцию.",
-      "resources": [
-        "https://react.dev/reference/react/useReducer"
-      ],
+      "question": "How does useReducer work?",
+      "answer": "useReducer manages state through a reducer function.",
+      "description": "useReducer is useful for complex state logic. It accepts a reducer function and an initial state, returning the current state and a dispatch function.",
+      "resources": ["https://react.dev/reference/react/useReducer"],
       "level": 3,
       "completed": false
     },
     {
       "id": "27",
-      "question": "Как отлавливать ошибки в React-компонентах?",
-      "answer": "Используйте Error Boundary.",
-      "description": "Error Boundary — это компонент, реализующий метод componentDidCatch. Он предотвращает падение всего приложения при ошибке в дочерних компонентах.",
-      "resources": [
-        "https://react.dev/learn/error-handling"
-      ],
+      "question": "How do you handle errors in React components?",
+      "answer": "Use an Error Boundary.",
+      "description": "An Error Boundary is a component that implements methods such as componentDidCatch and getDerivedStateFromError. It prevents the entire application from crashing when an error occurs in a child component.",
+      "resources": ["https://react.dev/learn/error-handling"],
       "level": 3,
       "completed": false
     },
     {
       "id": "28",
-      "question": "Что делает хук useRef?",
-      "answer": "useRef создаёт ссылку, которая сохраняется между рендерами.",
-      "description": "useRef используется для доступа к DOM-элементам или хранения данных между рендерами без повторного рендера.",
-      "resources": [
-        "https://react.dev/reference/react/useRef"
-      ],
+      "question": "What does the useRef hook do?",
+      "answer": "useRef creates a reference that persists between renders.",
+      "description": "useRef is used to access DOM elements or store mutable values between renders without triggering a re-render.",
+      "resources": ["https://react.dev/reference/react/useRef"],
       "level": 2,
       "completed": false
     },
     {
       "id": "29",
-      "question": "Как реализовать серверный рендеринг (SSR) в React?",
-      "answer": "Используйте Next.js или ReactDOMServer.",
-      "description": "SSR позволяет рендерить React-компоненты на сервере, улучшая SEO и скорость загрузки. В React для этого используют Next.js или ReactDOMServer.",
-      "resources": [
-        "https://nextjs.org/docs"
-      ],
+      "question": "How do you implement server-side rendering (SSR) in React?",
+      "answer": "Use Next.js or ReactDOMServer.",
+      "description": "SSR allows React components to be rendered on the server, improving SEO and initial page load performance. Common approaches include using Next.js or ReactDOMServer.",
+      "resources": ["https://nextjs.org/docs"],
       "level": 3,
       "completed": false
     },
     {
       "id": "30",
-      "question": "Что такое фрагменты (React Fragments)?",
-      "answer": "Fragments позволяют группировать элементы без добавления лишнего узла в DOM.",
-      "description": "Фрагменты (`<></>` или `React.Fragment`) используются, чтобы избежать лишних div-оберток, что делает DOM-структуру чище.",
-      "resources": [
-        "https://react.dev/reference/react/Fragment"
-      ],
+      "question": "What are React Fragments?",
+      "answer": "Fragments allow you to group elements without adding an extra DOM node.",
+      "description": "Fragments (`<></>` or `React.Fragment`) are used to avoid unnecessary wrapper elements such as divs, resulting in a cleaner DOM structure.",
+      "resources": ["https://react.dev/reference/react/Fragment"],
       "level": 1,
       "completed": false
     },
     {
       "id": "31",
-      "question": "Как использовать `useLayoutEffect`?",
-      "answer": "`useLayoutEffect` выполняется синхронно после рендера, но до отрисовки на экране.",
-      "description": "Используется, когда нужно измерить DOM перед его отрисовкой. Отличается от `useEffect`, который запускается после рендера.",
-      "resources": [
-        "https://react.dev/reference/react/useLayoutEffect"
-      ],
+      "question": "How do you use `useLayoutEffect`?",
+      "answer": "`useLayoutEffect` runs synchronously after rendering but before the browser paints the screen.",
+      "description": "It is typically used when you need to measure or modify the DOM before it is displayed. Unlike `useEffect`, it runs before the browser repaints the screen.",
+      "resources": ["https://react.dev/reference/react/useLayoutEffect"],
       "level": 3,
       "completed": false
     },
     {
       "id": "32",
-      "question": "Как работает `useImperativeHandle`?",
-      "answer": "`useImperativeHandle` позволяет управлять методами дочернего компонента через `ref`.",
-      "description": "`useImperativeHandle` используется с `forwardRef` для управления поведением внутреннего компонента из родительского. Полезно для работы с сторонними библиотеками.",
-      "resources": [
-        "https://react.dev/reference/react/useImperativeHandle"
-      ],
+      "question": "How does `useImperativeHandle` work?",
+      "answer": "`useImperativeHandle` allows you to expose custom methods of a child component through a `ref`.",
+      "description": "`useImperativeHandle` is used together with `forwardRef` to control the behavior exposed by a child component to its parent. It is especially useful when integrating with third-party libraries.",
+      "resources": ["https://react.dev/reference/react/useImperativeHandle"],
       "level": 3,
       "completed": false
     },
     {
       "id": "33",
-      "question": "Что такое HOC (Higher-Order Component)?",
-      "answer": "HOC — это функция, которая принимает компонент и возвращает новый компонент.",
-      "description": "HOC используются для повторного использования логики, например, авторизации или обработки данных. Это паттерн, замененный хуками, но иногда еще полезный.",
-      "resources": [
-        "https://react.dev/learn/reusing-logic-with-custom-hooks"
-      ],
+      "question": "What is a Higher-Order Component (HOC)?",
+      "answer": "A HOC is a function that takes a component and returns a new component.",
+      "description": "HOCs are used to reuse component logic, such as authentication or data handling. Although hooks have largely replaced this pattern, it is still useful in some scenarios.",
+      "resources": ["https://react.dev/learn/reusing-logic-with-custom-hooks"],
       "level": 3,
       "completed": false
     },
     {
       "id": "34",
-      "question": "Как создать глобальное состояние в React?",
-      "answer": "Используйте Context API, Redux или Zustand.",
-      "description": "Глобальное состояние можно управлять через `Context API` для простых случаев, `Redux` для сложных структур данных и `Zustand` как легковесную альтернативу.",
+      "question": "How do you create global state in React?",
+      "answer": "Use the Context API, Redux, or Zustand.",
+      "description": "Global state can be managed with the Context API for simple use cases, Redux for complex state management, or Zustand as a lightweight alternative.",
       "resources": [
         "https://react.dev/learn/passing-data-deeply-with-context",
         "https://redux.js.org"
@@ -382,53 +315,45 @@
     },
     {
       "id": "35",
-      "question": "Что такое React Fiber?",
-      "answer": "React Fiber — это новый алгоритм рендеринга в React.",
-      "description": "React Fiber — это переписанный движок React, который улучшает производительность и поддерживает такие функции, как приостановка и возобновление рендеринга. Он позволяет React работать асинхронно и приоритизировать задачи.",
-      "resources": [
-        "https://react.dev/blog/2017/09/26/react-v16.0.html"
-      ],
+      "question": "What is React Fiber?",
+      "answer": "React Fiber is React's rendering architecture.",
+      "description": "React Fiber is the reimplemented core rendering engine of React. It improves performance and enables features such as scheduling, interruption, prioritization, and concurrent rendering capabilities.",
+      "resources": ["https://react.dev/blog/2017/09/26/react-v16.0.html"],
       "level": 3,
       "completed": false
     },
     {
       "id": "36",
-      "question": "Как работает React Suspense?",
-      "answer": "Suspense позволяет откладывать рендеринг компонентов до завершения асинхронных операций.",
-      "description": "Suspense используется для управления асинхронными операциями, такими как загрузка данных или ленивая загрузка компонентов. Он отображает fallback-компонент, пока данные не будут готовы.",
-      "resources": [
-        "https://react.dev/reference/react/Suspense"
-      ],
+      "question": "How does React Suspense work?",
+      "answer": "Suspense allows rendering to be delayed until asynchronous operations are completed.",
+      "description": "Suspense is used to coordinate asynchronous operations such as lazy-loaded components and data fetching. It displays a fallback UI while content is loading.",
+      "resources": ["https://react.dev/reference/react/Suspense"],
       "level": 3,
       "completed": false
     },
     {
       "id": "37",
-      "question": "Что такое Concurrent Mode в React?",
-      "answer": "Concurrent Mode — это набор функций для улучшения отзывчивости приложений.",
-      "description": "Concurrent Mode позволяет React работать над несколькими задачами одновременно, приоритизируя их и улучшая пользовательский опыт. Он включает такие функции, как Suspense и приоритизация рендеринга.",
-      "resources": [
-        "https://react.dev/blog/2021/06/08/the-plan-for-react-18"
-      ],
+      "question": "What is Concurrent Mode in React?",
+      "answer": "Concurrent features are a set of React capabilities that improve application responsiveness.",
+      "description": "React 18 introduced concurrent rendering capabilities that allow React to interrupt, prioritize, and resume rendering work. Features such as Suspense, startTransition, and useDeferredValue are built on this foundation.",
+      "resources": ["https://react.dev/blog/2021/06/08/the-plan-for-react-18"],
       "level": 3,
       "completed": false
     },
     {
       "id": "38",
-      "question": "Как использовать React DevTools?",
-      "answer": "React DevTools — это инструмент для отладки React-приложений.",
-      "description": "React DevTools позволяет инспектировать дерево компонентов, просматривать их состояние и пропсы, а также анализировать производительность. Доступен как расширение для браузеров.",
-      "resources": [
-        "https://react.dev/learn/react-developer-tools"
-      ],
+      "question": "How do you use React DevTools?",
+      "answer": "React DevTools is a debugging tool for React applications.",
+      "description": "React DevTools allows you to inspect the component tree, view component state and props, and analyze application performance. It is available as a browser extension.",
+      "resources": ["https://react.dev/learn/react-developer-tools"],
       "level": 1,
       "completed": false
     },
     {
       "id": "39",
-      "question": "Что такое React Server Components?",
-      "answer": "React Server Components — это компоненты, которые рендерятся на сервере.",
-      "description": "React Server Components позволяют рендерить компоненты на сервере, уменьшая размер клиентского кода и улучшая производительность. Они поддерживают асинхронные данные и могут быть интегрированы с клиентскими компонентами.",
+      "question": "What are React Server Components?",
+      "answer": "React Server Components are components that render on the server.",
+      "description": "React Server Components run on the server and send their rendered output to the client, reducing the amount of JavaScript sent to the browser and improving performance. They support asynchronous data fetching and can be combined with client components.",
       "resources": [
         "https://react.dev/blog/2020/12/21/data-fetching-with-react-server-components"
       ],
@@ -437,42 +362,36 @@
     },
     {
       "id": "40",
-      "question": "Как использовать React с TypeScript?",
-      "answer": "React можно использовать с TypeScript для добавления типизации.",
-      "description": "TypeScript добавляет статическую типизацию в React-приложения, что помогает избежать ошибок и улучшает разработку. Для этого используются типы для пропсов, состояния и хуков.",
-      "resources": [
-        "https://react.dev/learn/typescript"
-      ],
+      "question": "How do you use React with TypeScript?",
+      "answer": "React can be used with TypeScript to add static typing.",
+      "description": "TypeScript adds static type checking to React applications, helping prevent errors and improving the development experience. It is commonly used to type props, state, hooks, and component interfaces.",
+      "resources": ["https://react.dev/learn/typescript"],
       "level": 2,
       "completed": false
     },
     {
       "id": "41",
-      "question": "Что такое React Hooks?",
-      "answer": "React Hooks — это функции, которые позволяют использовать состояние и другие возможности React в функциональных компонентах.",
-      "description": "Hooks, такие как `useState`, `useEffect`, `useContext`, позволяют управлять состоянием, побочными эффектами и контекстом в функциональных компонентах без использования классов.",
-      "resources": [
-        "https://react.dev/reference/react"
-      ],
+      "question": "What are React Hooks?",
+      "answer": "React Hooks are functions that allow you to use state and other React features in functional components.",
+      "description": "Hooks such as `useState`, `useEffect`, and `useContext` allow you to manage state, side effects, and context in functional components without using classes.",
+      "resources": ["https://react.dev/reference/react"],
       "level": 2,
       "completed": false
     },
     {
       "id": "42",
-      "question": "Как использовать React с Redux?",
-      "answer": "React можно интегрировать с Redux для управления глобальным состоянием.",
-      "description": "Redux — это библиотека для управления состоянием приложения. React-Redux предоставляет хуки, такие как `useSelector` и `useDispatch`, для работы с Redux в React-компонентах.",
-      "resources": [
-        "https://react-redux.js.org"
-      ],
+      "question": "How do you use React with Redux?",
+      "answer": "React can be integrated with Redux for global state management.",
+      "description": "Redux is a state management library. React-Redux provides hooks such as `useSelector` and `useDispatch` that allow React components to interact with the Redux store.",
+      "resources": ["https://react-redux.js.org"],
       "level": 3,
       "completed": false
     },
     {
       "id": "43",
-      "question": "Что такое React Testing Library?",
-      "answer": "React Testing Library — это инструмент для тестирования React-компонентов.",
-      "description": "React Testing Library позволяет тестировать компоненты так, как их используют пользователи. Она фокусируется на тестировании поведения, а не реализации.",
+      "question": "What is React Testing Library?",
+      "answer": "React Testing Library is a tool for testing React components.",
+      "description": "React Testing Library helps you test components the way users interact with them. It focuses on testing behavior rather than implementation details.",
       "resources": [
         "https://testing-library.com/docs/react-testing-library/intro"
       ],
@@ -481,42 +400,36 @@
     },
     {
       "id": "44",
-      "question": "Как использовать React с GraphQL?",
-      "answer": "React можно интегрировать с GraphQL через Apollo Client или Relay.",
-      "description": "GraphQL — это язык запросов для API. Apollo Client и Relay предоставляют инструменты для работы с GraphQL в React-приложениях, включая кэширование и управление состоянием.",
-      "resources": [
-        "https://www.apollographql.com/docs/react"
-      ],
+      "question": "How do you use React with GraphQL?",
+      "answer": "React can be integrated with GraphQL using Apollo Client or Relay.",
+      "description": "GraphQL is a query language for APIs. Apollo Client and Relay provide tools for working with GraphQL in React applications, including caching, data fetching, and state management.",
+      "resources": ["https://www.apollographql.com/docs/react"],
       "level": 3,
       "completed": false
     },
     {
       "id": "45",
-      "question": "Что такое React Native?",
-      "answer": "React Native — это фреймворк для создания мобильных приложений с использованием React.",
-      "description": "React Native позволяет разрабатывать кроссплатформенные мобильные приложения, используя JavaScript и React. Он компилируется в нативные компоненты для iOS и Android.",
-      "resources": [
-        "https://reactnative.dev"
-      ],
+      "question": "What is React Native?",
+      "answer": "React Native is a framework for building mobile applications using React.",
+      "description": "React Native allows developers to create cross-platform mobile applications using JavaScript and React. It renders to native UI components on iOS and Android.",
+      "resources": ["https://reactnative.dev"],
       "level": 2,
       "completed": false
     },
     {
       "id": "46",
-      "question": "Как использовать React с Webpack?",
-      "answer": "Webpack используется для сборки React-приложений.",
-      "description": "Webpack — это модульный сборщик, который позволяет объединять JavaScript, CSS и другие ресурсы в бандлы. Для React настраиваются загрузчики (loaders) и плагины, такие как Babel.",
-      "resources": [
-        "https://webpack.js.org/guides/getting-started"
-      ],
+      "question": "How do you use React with Webpack?",
+      "answer": "Webpack is used to bundle React applications.",
+      "description": "Webpack is a module bundler that combines JavaScript, CSS, and other assets into bundles. React projects commonly use loaders and plugins such as Babel to transpile and optimize code.",
+      "resources": ["https://webpack.js.org/guides/getting-started"],
       "level": 3,
       "completed": false
     },
     {
       "id": "47",
-      "question": "Что такое React Error Boundaries?",
-      "answer": "Error Boundaries — это компоненты для обработки ошибок в React.",
-      "description": "Error Boundaries перехватывают ошибки в дочерних компонентах, логируют их и отображают запасной UI. Они реализуются с помощью методов `getDerivedStateFromError` и `componentDidCatch`.",
+      "question": "What are React Error Boundaries?",
+      "answer": "Error Boundaries are components used for error handling in React.",
+      "description": "Error Boundaries catch errors in their descendant component tree, log them, and display a fallback UI instead of crashing the entire application. They are implemented using `getDerivedStateFromError` and `componentDidCatch`.",
       "resources": [
         "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary"
       ],
@@ -525,42 +438,36 @@
     },
     {
       "id": "48",
-      "question": "Как использовать React с CSS-in-JS?",
-      "answer": "CSS-in-JS позволяет писать стили прямо в JavaScript.",
-      "description": "Библиотеки, такие как styled-components или Emotion, позволяют писать стили в компонентах, что улучшает модульность и изоляцию стилей.",
-      "resources": [
-        "https://styled-components.com"
-      ],
+      "question": "How do you use React with CSS-in-JS?",
+      "answer": "CSS-in-JS allows you to write styles directly in JavaScript.",
+      "description": "Libraries such as styled-components and Emotion allow you to define styles within components, improving modularity and style encapsulation.",
+      "resources": ["https://styled-components.com"],
       "level": 2,
       "completed": false
     },
     {
       "id": "49",
-      "question": "Что такое React Concurrent Rendering?",
-      "answer": "Concurrent Rendering — это возможность React работать над несколькими задачами одновременно.",
-      "description": "Concurrent Rendering позволяет React приостанавливать и возобновлять рендеринг, чтобы обеспечить более плавный пользовательский опыт. Это особенно полезно для приложений с высокой нагрузкой.",
-      "resources": [
-        "https://react.dev/blog/2021/06/08/the-plan-for-react-18"
-      ],
+      "question": "What is React Concurrent Rendering?",
+      "answer": "Concurrent rendering is React's ability to work on multiple rendering tasks without blocking the user interface.",
+      "description": "Concurrent rendering allows React to interrupt, pause, resume, and prioritize rendering work, creating a smoother user experience. It is a foundational capability behind features such as Suspense, transitions, and deferred updates.",
+      "resources": ["https://react.dev/blog/2021/06/08/the-plan-for-react-18"],
       "level": 3,
       "completed": false
     },
     {
       "id": "50",
-      "question": "Как использовать React с SSR и CSR?",
-      "answer": "SSR (Server-Side Rendering) и CSR (Client-Side Rendering) можно комбинировать в React.",
-      "description": "SSR используется для рендеринга на сервере, что улучшает SEO и скорость загрузки. CSR позволяет динамически обновлять интерфейс на клиенте. Next.js — популярный фреймворк для SSR и CSR.",
-      "resources": [
-        "https://nextjs.org/docs"
-      ],
+      "question": "How do you use React with SSR and CSR?",
+      "answer": "SSR (Server-Side Rendering) and CSR (Client-Side Rendering) can be combined in React applications.",
+      "description": "SSR renders content on the server to improve SEO and initial page load performance, while CSR enables dynamic updates in the browser. Frameworks such as Next.js support both SSR and CSR in the same application.",
+      "resources": ["https://nextjs.org/docs"],
       "level": 3,
       "completed": false
     },
     {
       "id": "e5c9",
-      "question": "Ты крут в React?",
-      "answer": "🍏 канэшна 🍏",
-      "description": "Потому что React мне очень нравится и я уже много с ним практикуюсь",
+      "question": "Are you good at React?",
+      "answer": "🍏 Of course 🍏",
+      "description": "Because I really enjoy React and have spent a lot of time practicing and working with it.",
       "resources": [],
       "level": 1,
       "completed": false
