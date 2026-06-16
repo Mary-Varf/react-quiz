@@ -24,7 +24,7 @@ export const MainLayout = () => {
           </footer>
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer className={cls.toastFix} />
     </>
   );
 };

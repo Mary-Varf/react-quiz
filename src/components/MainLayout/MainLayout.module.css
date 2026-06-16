@@ -31,3 +31,13 @@
   color: var(--text-color);
   opacity: 0.6;
 }
+
+.toastFix {
+  button {
+    svg {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+}
