@@ -4,7 +4,7 @@ import { Button } from "../Button";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/isAuth";
 import cls from "./Header.module.css";
-import { AUTH_STORAGE } from "../../constants";
+import { AUTH_STORAGE } from "../../constants/global.constants";
 import { ThemeToggler } from "../../features/ThemeToggler/ThemeToggler";
 
 export const Header = () => {

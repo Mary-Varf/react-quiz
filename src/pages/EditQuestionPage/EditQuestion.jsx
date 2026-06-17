@@ -3,7 +3,7 @@ import cls from "./EditQuestionPage.module.css";
 import { QuestionForm } from "../../components/QuestionForm";
 import { Loader } from "../../components/Loader";
 import { delayFn } from "../../helpers/delayFn";
-import { API_URL } from "../../constants";
+import { API_URL } from "../../constants/global.constants";
 import { toast } from "react-toastify";
 import { dateFormat } from "../../helpers/dataFormat";
 import { useFetch } from "../../hooks/useFetch";

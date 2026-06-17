@@ -3,7 +3,7 @@ import cls from "./AddQuestionPage.module.css";
 import { Button } from "../../components/Button";
 import { delayFn } from "../../helpers/delayFn";
 import { toast } from "react-toastify";
-import { API_URL } from "../../constants";
+import { API_URL } from "../../constants/global.constants";
 import { Loader } from "../../components/Loader";
 import { QuestionForm } from "../../components/QuestionForm";
 
