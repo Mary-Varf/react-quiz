@@ -3,34 +3,42 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import { defineConfig, globalIgnores } from "eslint/config";
-import prettier from "eslint-plugin-prettier";
+import prettierPlugin from "eslint-plugin-prettier";
+import { tseslint } from "typescript-eslint";
 
 export default defineConfig([
   globalIgnores(["dist"]),
   {
-    files: ["**/*.{js,jsx}"],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     extends: [
       js.configs.recommended,
+      tseslint.config.recommended,
       reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
     ],
     languageOptions: {
+      ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
     plugins: {
-      prettier,
+      prettierPlugin,
     },
     rules: {
-      "react/prop-types": "off",
+      //   "react/prop-types": "off",
+      "no-console": "warn",
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          singleQuote: false,
+          printWidth: 130,
+          tabWidth: 2,
+        },
+      ],
     },
-    "prettier/prettier": [
-      "error",
-      {
-        singleQuote: false,
-        printWidth: 130,
-        tabWidth: 2,
-      },
-    ],
   },
 ]);
