@@ -49,7 +49,7 @@ export const EditQuestion = ({ initialState = {} }) => {
         throw new Error(response.statusText);
       }
       const question = response.json();
-      toast.success("New question is eddited created");
+      toast.success("New question is edited");
       return isClearForm ? {} : question;
     } catch (error) {
       toast.error(error);
