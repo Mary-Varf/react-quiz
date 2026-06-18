@@ -14,6 +14,13 @@ export enum THEME_ENUM {
   DARK = "dark",
 }
 
+export enum BADGE_ENUM {
+  PRIMARY = "primary",
+  SUCCESS = "success",
+  WARNING = "warning",
+  ALERT = "alert",
+}
+
 export interface IQuestionCard {
   id: string;
   question: string;
