@@ -35,3 +35,13 @@ export interface IQuestionCard {
 export interface IQuestionCardState extends IQuestionCard {
   clearForm: boolean;
 }
+
+export interface IQuestionData {
+  data: IQuestionCard[];
+  first: number | null;
+  items: number | null;
+  last: number | null;
+  next: number | null;
+  pages: number | null;
+  prev: number | null;
+}

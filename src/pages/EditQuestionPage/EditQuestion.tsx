@@ -1,4 +1,4 @@
-import { useActionState } from "react";
+import { useActionState, type FC } from "react";
 import cls from "./EditQuestionPage.module.css";
 import { QuestionForm } from "../../components/QuestionForm";
 import { Loader } from "../../components/Loader";
@@ -8,12 +8,20 @@ import { toast } from "react-toastify";
 import { dateFormat } from "../../helpers/dataFormat";
 import { useFetch } from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
-import EditQuestionPage from "./EditQuestionPage";
+import type {
+  IQuestionCard,
+  IQuestionCardState,
+} from "../../types/global.types";
 
-export const EditQuestion = ({ initialState = {} }) => {
+interface IEditQuestionProps {
+  initialState: IQuestionCard;
+}
+
+export const EditQuestion: FC<IEditQuestionProps> = ({ initialState }) => {
   const navigate = useNavigate();
+  const questionId = initialState?.id || "";
   const [removeQuestion, isQuestionRemoving] = useFetch(async () => {
-    const response = await fetch(`${API_URL}/react/${initialState.id}`, {
+    const response = await fetch(`${API_URL}/react/${questionId}`, {
       method: "DELETE",
     });
     const data = await response.json();
@@ -22,12 +30,15 @@ export const EditQuestion = ({ initialState = {} }) => {
     navigate("/");
   });
 
-  const editCardAction = async (_prevState, formData) => {
+  const editCardAction = async (
+    _prevState: Partial<IQuestionCardState>,
+    formData: FormData,
+  ) => {
     try {
       await delayFn();
 
       const data = Object.fromEntries(formData);
-      const resources = data.resources.trim();
+      const resources = (data.resources as string).trim();
       const questionId = data.questionId;
       const isClearForm = data.clearForm;
 
@@ -49,15 +60,18 @@ export const EditQuestion = ({ initialState = {} }) => {
         throw new Error(response.statusText);
       }
       const question = response.json();
-      toast.success("New question is eddited created");
+      toast.success("New question is edited");
       return isClearForm ? {} : question;
-    } catch (error) {
-      toast.error(error);
+    } catch (error: any) {
+      toast.error(error?.message);
       return {};
     }
   };
 
-  const [formState, formAction, isPending] = useActionState(editCardAction, {
+  const [formState, formAction, isPending] = useActionState<
+    Partial<IQuestionCardState>,
+    FormData
+  >(editCardAction, {
     ...initialState,
     clearForm: false,
   });
@@ -85,7 +99,7 @@ export const EditQuestion = ({ initialState = {} }) => {
           formAction={formAction}
           isPending={isPending || isQuestionRemoving}
           submitBtnText={"Edit question"}
-          formState={formState}
+          cardState={formState}
         />
       </div>
     </>

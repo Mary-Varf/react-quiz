@@ -11,24 +11,29 @@ const LEVEL_OPTIONS = [
 
 export interface IQuestionForm {
   formAction: any;
-  cartState: IQuestionCardState;
+  cardState: Partial<IQuestionCardState>;
   isPending: boolean;
   submitBtnText: string;
 }
 
 export const QuestionForm: FC<IQuestionForm> = ({
   formAction,
-  cartState,
+  cardState,
   isPending,
   submitBtnText,
 }) => {
   const defaultResources =
-    cartState.resources && Array.isArray(cartState.resources)
-      ? cartState.resources.join(", ")
+    cardState?.resources && Array.isArray(cardState.resources)
+      ? cardState.resources.join(", ")
       : "";
   return (
     <form action={formAction} className={cls.form}>
-      <input type="text" hidden defaultValue={cartState.id} name="questionId" />
+      <input
+        type="text"
+        hidden
+        defaultValue={cardState?.id}
+        name="questionId"
+      />
       <div className={cls.formControl}>
         <label htmlFor="questionField">Question:</label>
         <textarea
@@ -38,7 +43,7 @@ export const QuestionForm: FC<IQuestionForm> = ({
           rows={2}
           required
           placeholder="Please enter question"
-          defaultValue={cartState?.question}
+          defaultValue={cardState?.question}
         ></textarea>
       </div>
 
@@ -51,7 +56,7 @@ export const QuestionForm: FC<IQuestionForm> = ({
           rows={2}
           required
           placeholder="Please enter short anser"
-          defaultValue={cartState?.answer}
+          defaultValue={cardState?.answer}
         ></textarea>
       </div>
 
@@ -64,7 +69,7 @@ export const QuestionForm: FC<IQuestionForm> = ({
           rows={5}
           required
           placeholder="Please enter description"
-          defaultValue={cartState?.description}
+          defaultValue={cardState?.description}
         ></textarea>
       </div>
 
@@ -98,7 +103,7 @@ export const QuestionForm: FC<IQuestionForm> = ({
             type="checkbox"
             name="clearForm"
             id="clearFormField"
-            defaultChecked={cartState?.clearForm && true}
+            defaultChecked={cardState?.clearForm && true}
             className={cls?.checkbox}
           />
           <span>Clear form after submitting?</span>

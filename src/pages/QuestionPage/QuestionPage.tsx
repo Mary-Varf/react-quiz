@@ -7,6 +7,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { API_URL } from "../../constants/global.constants";
 import { Loader, SmallLoader } from "../../components/Loader";
 import { useAuth } from "../../hooks/isAuth";
+import { BADGE_ENUM, type IQuestionCard } from "../../types/global.types";
 
 export const QuestionPage = () => {
   const checkboxId = useId();
@@ -14,26 +15,31 @@ export const QuestionPage = () => {
   const { id } = useParams();
   const { isAuth } = useAuth();
 
-  const [card, setCard] = useState(null);
-  const [isChecked, setIsChecked] = useState(true);
+  const [card, setCard] = useState<IQuestionCard | null>(null);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
   const levelVariant = () =>
-    card.level === 1 ? "primary" : card.level === 2 ? "warning" : "alert";
-  const completedVariant = () => (card.completed ? "success" : "primary");
+    card?.level === 1
+      ? BADGE_ENUM.PRIMARY
+      : card?.level === 2
+        ? BADGE_ENUM.WARNING
+        : BADGE_ENUM.ALERT;
+  const completedVariant = () =>
+    card?.completed ? BADGE_ENUM.SUCCESS : BADGE_ENUM.PRIMARY;
 
   const [fetchCard, isCardLoading] = useFetch(async () => {
     const response = await fetch(`${API_URL}/react/${id}`);
-    const data = await response.json();
+    const data: IQuestionCard = await response.json();
 
     setCard(data);
   });
 
   const [updateCard, isCardUpdating] = useFetch(async (isChecked) => {
-    const response = await fetch(`${API_URL}/reacft/${id}`, {
+    const response = await fetch(`${API_URL}/react/${id}`, {
       method: "PATCH",
       body: JSON.stringify({ completed: isChecked }),
     });
-    const data = await response.json();
+    const data: IQuestionCard = await response.json();
 
     setCard(data);
   });
