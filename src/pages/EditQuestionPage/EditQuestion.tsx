@@ -25,6 +25,7 @@ export const EditQuestion: FC<IEditQuestionProps> = ({ initialState }) => {
       method: "DELETE",
     });
     const data = await response.json();
+    console.log(data);
 
     toast.success("Question has been deleted");
     navigate("/");
