@@ -1,6 +1,7 @@
-import {} from "react";
+import { type FC } from "react";
 import cls from "./QuestionForm.module.css";
 import { Button } from "../Button";
+import type { IQuestionCardState } from "../../types/global.types";
 
 const LEVEL_OPTIONS = [
   { value: 1, text: "1 - easiest" },
@@ -8,29 +9,36 @@ const LEVEL_OPTIONS = [
   { value: 3, text: "3 - hardest" },
 ];
 
-export const QuestionForm = ({
+export interface IQuestionForm {
+  formAction: any;
+  cartState: IQuestionCardState;
+  isPending: boolean;
+  submitBtnText: string;
+}
+
+export const QuestionForm: FC<IQuestionForm> = ({
   formAction,
-  formState,
+  cartState,
   isPending,
   submitBtnText,
 }) => {
   const defaultResources =
-    formState.resources && Array.isArray(formState.resources)
-      ? formState.resources.join(", ")
+    cartState.resources && Array.isArray(cartState.resources)
+      ? cartState.resources.join(", ")
       : "";
   return (
     <form action={formAction} className={cls.form}>
-      <input type="text" hidden defaultValue={formState.id} name="questionId" />
+      <input type="text" hidden defaultValue={cartState.id} name="questionId" />
       <div className={cls.formControl}>
         <label htmlFor="questionField">Question:</label>
         <textarea
           name="question"
           id="questionField"
-          cols="30"
-          rows="2"
+          cols={30}
+          rows={2}
           required
           placeholder="Please enter question"
-          defaultValue={formState?.question}
+          defaultValue={cartState?.question}
         ></textarea>
       </div>
 
@@ -39,11 +47,11 @@ export const QuestionForm = ({
         <textarea
           name="answer"
           id="shortAnswerField"
-          cols="30"
-          rows="2"
+          cols={30}
+          rows={2}
           required
           placeholder="Please enter short anser"
-          defaultValue={formState?.answer}
+          defaultValue={cartState?.answer}
         ></textarea>
       </div>
 
@@ -52,11 +60,11 @@ export const QuestionForm = ({
         <textarea
           name="description"
           id="descriptionField"
-          cols="30"
-          rows="5"
+          cols={30}
+          rows={5}
           required
           placeholder="Please enter description"
-          defaultValue={formState?.description}
+          defaultValue={cartState?.description}
         ></textarea>
       </div>
 
@@ -65,8 +73,8 @@ export const QuestionForm = ({
         <textarea
           name="resources"
           id="resourcesField"
-          cols="30"
-          rows="3"
+          cols={30}
+          rows={3}
           placeholder="Please enter resources separated by commas"
           defaultValue={defaultResources}
         ></textarea>
@@ -90,7 +98,7 @@ export const QuestionForm = ({
             type="checkbox"
             name="clearForm"
             id="clearFormField"
-            defaultChecked={formState?.clearForm && true}
+            defaultChecked={cartState?.clearForm && true}
             className={cls?.checkbox}
           />
           <span>Clear form after submitting?</span>

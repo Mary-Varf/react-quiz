@@ -1,17 +1,17 @@
-import { type FC, type ReactNode } from "react";
+import { type FC, type MouseEvent, type ReactNode } from "react";
 import cls from "./Button.module.css";
 
 interface IButton {
-  onClick: () => {};
-  isActive: boolean;
-  isDisabled: boolean;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  isActive?: boolean;
+  isDisabled?: boolean;
   children: ReactNode;
 }
 
 export const Button: FC<IButton> = ({
   onClick,
   isActive,
-  isDisabled,
+  isDisabled = false,
   children,
 }) => {
   return (
