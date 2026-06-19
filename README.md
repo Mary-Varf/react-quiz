@@ -1,4 +1,3 @@
-````md
 # React Quiz App
 
 An interactive full-stack React quiz application where users can test their React knowledge, manage quiz questions, and personalize their experience with theme switching.
@@ -25,8 +24,7 @@ An interactive full-stack React quiz application where users can test their Reac
 ### 📝 Quiz System
 
 - React-focused quiz questions
-- Instant answer feedback
-- Score calculation
+- Instant answer
 - Interactive quiz experience
 
 ### 🛠️ Question Management (CRUD)
@@ -64,19 +62,10 @@ Authenticated users can:
 ### Backend
 
 - Node.js
-- Express.js
 
 ### Database
 
-- MongoDB
-
-### Authentication
-
-- JWT (JSON Web Tokens)
-
-### Deployment
-
-- Render
+- json-server
 
 ---
 
@@ -87,6 +76,7 @@ Authenticated users can:
 ```bash
 git clone https://github.com/Mary-Varf/react-quiz.git
 ```
+
 ````
 
 ### Navigate to the project folder
@@ -101,10 +91,10 @@ cd react-quiz
 npm install
 ```
 
-### Start the development server
+### Start the development and server
 
 ```bash
-npm run dev
+npm run start app
 ```
 
 ---
@@ -114,9 +104,7 @@ npm run dev
 Create a `.env` file and add the required variables:
 
 ```env
-VITE_API_URL=your_api_url
-MONGO_URI=your_database_connection_string
-JWT_SECRET=your_secret
+VITE_SERVER_URL = http://localhost:8802
 ```
 
 Adjust the values according to your local setup.
@@ -169,10 +157,4 @@ This project helped me improve my skills in:
 
 GitHub: https://github.com/Mary-Varf
 
----
-
-⭐ If you like this project, consider giving it a star!
-
-```
-
-```
+````
