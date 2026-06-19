@@ -16,6 +16,9 @@ import { Button } from "../../components/Button";
 import type { IQuestionData } from "../../types/global.types";
 
 const DEFAULT_PER_PAGE = 10;
+const PAGINATION_BUTTONS = 5;
+const ONE_PAGE = 1;
+const TWO_PAGES = 2;
 
 export const HomePage = () => {
   const [searchParams, setSearchParams] = useState<string>(
@@ -28,8 +31,10 @@ export const HomePage = () => {
 
   const controlsContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const getActivePageNumber = (questions: IQuestionData): number | null =>
-    questions.next === null ? questions.last : questions.next - 1;
+  const getActivePageNumber = (questions: IQuestionData): number => {
+    if (questions.last === null) return 0;
+    return questions.next === null ? questions?.last : questions.next - 1;
+  };
 
   const [getQuestions, isLoading, error] = useFetch(async (url) => {
     const response = await fetch(`${API_URL}/${url}`);
@@ -137,17 +142,39 @@ export const HomePage = () => {
       ) : (
         pagination.length > 1 && (
           <div className={cls.paginationContainer} onClick={paginationHandler}>
-            {pagination.map((value) => {
-              return (
-                <Button
-                  key={value}
-                  isActive={
-                    value === getActivePageNumber(questions as IQuestionData)
-                  }
-                >
-                  {value}
-                </Button>
-              );
+            {pagination.map((el) => {
+              if (
+                pagination.length > PAGINATION_BUTTONS &&
+                (el == ONE_PAGE ||
+                  el == getActivePageNumber(questions as IQuestionData) ||
+                  el == pagination.length ||
+                  el ==
+                    getActivePageNumber(questions as IQuestionData) +
+                      ONE_PAGE ||
+                  el ==
+                    getActivePageNumber(questions as IQuestionData) - ONE_PAGE)
+              ) {
+                return (
+                  <Button
+                    isActive={
+                      el === getActivePageNumber(questions as IQuestionData)
+                    }
+                    key={el}
+                  >
+                    {el}
+                  </Button>
+                );
+              } else if (
+                pagination.length > PAGINATION_BUTTONS &&
+                (el ==
+                  getActivePageNumber(questions as IQuestionData) + TWO_PAGES ||
+                  el ==
+                    getActivePageNumber(questions as IQuestionData) - TWO_PAGES)
+              ) {
+                return "...";
+              } else {
+                return "";
+              }
             })}
           </div>
         )
