@@ -1,16 +1,178 @@
-# React + Vite
+````md
+# React Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive full-stack React quiz application where users can test their React knowledge, manage quiz questions, and personalize their experience with theme switching.
 
-Currently, two official plugins are available:
+![React Quiz App Demo](./assets/demo.gif)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+**Live Site:** https://react-quiz-app-8gve.onrender.com/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> ⚠️ This project is hosted on a free server. If the application has been inactive, the backend may take a few seconds to wake up. Please wait a moment and the app will load automatically.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+### 🔐 Authentication
+
+- User registration
+- User login
+- Protected routes
+- Secure user sessions
+
+### 📝 Quiz System
+
+- React-focused quiz questions
+- Instant answer feedback
+- Score calculation
+- Interactive quiz experience
+
+### 🛠️ Question Management (CRUD)
+
+Authenticated users can:
+
+- Create new question cards
+- Edit existing questions
+- Delete questions
+- Manage quiz content dynamically
+
+### 🎨 Theme Customization
+
+- Light mode
+- Dark mode
+- Seamless theme switching
+
+### 📱 Responsive Design
+
+- Mobile-friendly layout
+- Clean and modern UI
+- Optimized user experience across devices
+
+---
+
+## 🧰 Tech Stack
+
+### Frontend
+
+- React
+- React Router
+- Context API
+- CSS
+
+### Backend
+
+- Node.js
+- Express.js
+
+### Database
+
+- MongoDB
+
+### Authentication
+
+- JWT (JSON Web Tokens)
+
+### Deployment
+
+- Render
+
+---
+
+## 📦 Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/Mary-Varf/react-quiz.git
+```
+````
+
+### Navigate to the project folder
+
+```bash
+cd react-quiz
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file and add the required variables:
+
+```env
+VITE_API_URL=your_api_url
+MONGO_URI=your_database_connection_string
+JWT_SECRET=your_secret
+```
+
+Adjust the values according to your local setup.
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/
+├── pages/
+├── context/
+├── hooks/
+├── services/
+├── assets/
+└── App.jsx
+```
+
+---
+
+## 🎯 Future Improvements
+
+- Quiz categories
+- Difficulty levels
+- Leaderboards
+- User statistics dashboard
+- Question search and filtering
+- Timed quizzes
+
+---
+
+## 📚 Learning Outcomes
+
+This project helped me improve my skills in:
+
+- React development
+- State management
+- Authentication and authorization
+- CRUD operations
+- REST API integration
+- Responsive design
+- Full-stack deployment
+
+---
+
+## 👩‍💻 Author
+
+**Mary Varf**
+
+GitHub: https://github.com/Mary-Varf
+
+---
+
+⭐ If you like this project, consider giving it a star!
+
+```
+
+```
