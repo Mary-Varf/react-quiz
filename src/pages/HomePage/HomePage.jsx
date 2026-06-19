@@ -8,7 +8,10 @@ import { SearchInput } from "../../components/SearchInput";
 import { Button } from "../../components/Button";
 import { Select } from "../../components/Select";
 
-const DEFAULT_PER_PAGE = 20;
+const DEFAULT_PER_PAGE = 10;
+const PAGINATION_BUTTONS = 5;
+const ONE_PAGE = 1;
+const TWO_PAGES = 2;
 
 const PAGE_OPTIONS = [
   { value: 10, text: 10 },
@@ -131,11 +134,28 @@ export const HomePage = () => {
       ) : pagination.length > 1 ? (
         <div className={cls.paginationContainer} onClick={paginationHandler}>
           {pagination.map((el) => {
-            return (
-              <Button isActive={el === getActivePageNumber()} key={el}>
-                {el}
-              </Button>
-            );
+            if (
+              pagination.length > PAGINATION_BUTTONS &&
+              (el == ONE_PAGE ||
+                el == getActivePageNumber() ||
+                el == pagination.length ||
+                el == getActivePageNumber() + ONE_PAGE ||
+                el == getActivePageNumber() - ONE_PAGE)
+            ) {
+              return (
+                <Button isActive={el === getActivePageNumber()} key={el}>
+                  {el}
+                </Button>
+              );
+            } else if (
+              pagination.length > PAGINATION_BUTTONS &&
+              (el == getActivePageNumber() + TWO_PAGES ||
+                el == getActivePageNumber() - TWO_PAGES)
+            ) {
+              return "...";
+            } else {
+              return "";
+            }
           })}
         </div>
       ) : (

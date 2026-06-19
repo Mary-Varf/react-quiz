@@ -78,6 +78,7 @@
 body {
   color: var(--text-color);
   background-color: var(--main-bg-color);
+  scrollbar-color: var(--text-color) var(--main-bg-color);
 }
 a {
   color: inherit;

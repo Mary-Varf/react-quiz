@@ -2,7 +2,7 @@
   width: fit-content;
   border-radius: 20px;
   padding: 3px 10px;
-  color: var(--text-color);
+  color: var(--card-bg-color);
   text-transform: capitalize;
   font-weight: 500;
   font-size: 14px;
@@ -19,10 +19,4 @@
 }
 .alert {
   background-color: #d84040;
-}
-
-@media (prefers-color-scheme: light) {
-  .badge {
-    color: var(--btn-text-color);
-  }
 }
