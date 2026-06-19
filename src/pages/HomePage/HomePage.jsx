@@ -52,14 +52,21 @@ export const HomePage = () => {
     getQuestions(`react${searchParams}`);
   }, [searchParams]);
 
+  // TODO: remove on production
+  useEffect(() => {
+    alert(
+      "Thanks for visiting!\nThis project is hosted on a free server, which may take up to 10 seconds to wake up after being idle. Your request is being processed, please stay on this page, and everything will load automatically.",
+    );
+  }, []);
+
   const onSearchChangeHandler = (e) => {
     setSearchValue(e.target.value);
   };
 
   const pagination = useMemo(() => {
-    const totlaCardsCount = questions?.pages || 0;
+    const totalCardsCount = questions?.pages || 0;
 
-    return Array(totlaCardsCount)
+    return Array(totalCardsCount)
       .fill(0)
       .map((_, i) => i + 1);
   }, [questions]);
